@@ -1,13 +1,13 @@
 language: nix
 env:
   # GHC 7.10.3
-  - STACK_RESOLVER=lts-6.35
+  # - STACK_RESOLVER=lts-6.35
   # GHC 8.0.2
   # - STACK_RESOLVER=9.21
   # GHC 8.2.2
-  # - STACK_RESOLVER=lts-11.22
+  - STACK_RESOLVER=lts-11.22
   # GHC 8.4.4
-  # - STACK_RESOLVER=lts-12.26
+  - STACK_RESOLVER=lts-12.26
   # GHC 8.6.3
   - STACK_RESOLVER=lts-13.10
 
