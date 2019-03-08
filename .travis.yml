@@ -16,9 +16,7 @@ before_install:
   - sudo mkdir -p /etc/nix
   - echo "substituters = https://cache.nixos.org/ file://$HOME/nix.store" | sudo tee -a /etc/nix/nix.conf > /dev/null
   - echo 'require-sigs = false' | sudo tee -a /etc/nix/nix.conf > /dev/null
-
-before_script:
-  - sudo mkdir /etc/nix && echo 'sandbox = true' | sudo tee /etc/nix/nix.conf
+  - echo 'sandbox = true' | sudo tee -a /etc/nix/nix.conf > /dev/null
 
 script:
   - stack build --test --prefetch --resolver $STACK_RESOLVER
