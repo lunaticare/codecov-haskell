@@ -1,7 +1,7 @@
 language: nix
 env:
   # GHC 7.10.3
-  - STACK_RESOLVER=lts=6.35
+  - STACK_RESOLVER=lts-6.35
   # GHC 8.0.2
   # - STACK_RESOLVER=9.21
   # GHC 8.2.2
