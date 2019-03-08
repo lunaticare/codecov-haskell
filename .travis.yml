@@ -32,3 +32,8 @@ cache:
   directories:
   - $HOME/nix.store
   - $HOME/.stack
+
+before_cache:
+# cache Nix store https://nixos.wiki/wiki/Nix_on_Travis
+- mkdir -p $HOME/nix.store
+- nix copy --to file://$HOME/nix.store -f default.nix buildInputs
