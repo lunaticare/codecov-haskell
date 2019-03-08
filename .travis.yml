@@ -31,3 +31,4 @@ script:
 cache:
   directories:
   - $HOME/nix.store
+  - $HOME/.stack
