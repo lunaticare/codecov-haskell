@@ -27,7 +27,7 @@ script:
 
 after_script:
   - stack hpc report --all --destdir $(stack path --local-hpc-root)/all/
-  - stack exec -- codecov-haskell test-all --tix-dir $(stack path --local-hpc-root)/ --mix-dir $(stack path --dist-dir)/hpc/ --exclude-dir=test --display-report --print-response
+  - stack exec -- codecov-haskell test-all --tix-dir $(stack path --local-hpc-root)/ --mix-dir $(stack path --dist-dir)/hpc/ --exclude-dir=test --display-report --print-response --token=$CODECOV_TOKEN
 
 cache:
   directories:
