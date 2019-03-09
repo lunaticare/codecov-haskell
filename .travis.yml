@@ -23,11 +23,10 @@ before_install:
   - travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 script:
-  - stack build --test --prefetch --coverage --resolver $STACK_RESOLVER
+  - stack build --test --copy-bins --prefetch --coverage --resolver $STACK_RESOLVER
 
 after_script:
-  - stack hpc report --all --destdir $(stack path --local-hpc-root)/all/
-  - stack install codecov-haskell --resolver $STACK_RESOLVER
+  - stack hpc report --all --destdir $(stack path --local-hpc-root)/all/  --resolver $STACK_RESOLVER
   - codecov-haskell test-all --tix-dir $(stack path --local-hpc-root)/ --mix-dir $(stack path --dist-dir)/hpc/ --exclude-dir=test --display-report --print-response --token=$CODECOV_TOKEN
 
 cache:
