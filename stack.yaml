@@ -18,9 +18,10 @@
 resolver: lts-13.10
 
 nix:
-  enable: true
+  # enable: true
   packages:
     - curl
+    - zlib
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
