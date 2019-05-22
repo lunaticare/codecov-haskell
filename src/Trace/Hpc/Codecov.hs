@@ -94,7 +94,7 @@ readCoverageData :: Config                   -- ^ codecov-haskell configuration
                  -> [String]                 -- ^ excluded source folders
                  -> IO TestSuiteCoverageData -- ^ coverage data list
 readCoverageData config testSuiteName excludeDirPatterns = do
-    tixPath <- getTixPath config testSuiteName
+    tixPath <- return $ getTixPath config testSuiteName
     mtix <- readTix tixPath
     case mtix of
         Nothing -> error ("Couldn't find the file " ++ tixPath) >> exitFailure

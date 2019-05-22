@@ -29,5 +29,5 @@ getMixPaths config testSuiteName tix = do _dirName <- dirName
               (packageId, _) -> [ "", packageId ]
           TixModule modName _ _ _ = tix
 
-getTixPath :: Config -> String -> IO FilePath
-getTixPath config testSuiteName = return $ tixDir config ++ testSuiteName ++ "/" ++ getTixFileName testSuiteName
+getTixPath :: Config -> String -> FilePath
+getTixPath config testSuiteName = tixDir config ++ testSuiteName ++ "/" ++ getTixFileName testSuiteName
