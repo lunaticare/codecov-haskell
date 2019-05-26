@@ -20,9 +20,7 @@ resolver: lts-13.18
 
 nix:
   enable: true
-  packages:
-    - curl
-    - zlib
+  shell-file: shell.nix
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
