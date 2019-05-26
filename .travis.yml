@@ -29,7 +29,7 @@ after_script:
   - export PACKAGE_NAME=codecov-haskell
 	- export MIX_DIR="$(stack path --dist-dir)/hpc/"
 	- export TIX_DIR="$(stack path --local-hpc-root)/$PACKAGE_NAME/"
-  - \
+  - |
     codecov-haskell test-all --exclude-dir=test \
 			--display-report \
 			--print-response \
