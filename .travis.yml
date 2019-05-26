@@ -26,8 +26,18 @@ script:
   - stack build --test --copy-bins --prefetch --coverage --resolver $STACK_RESOLVER
 
 after_script:
-  - stack hpc report --all --destdir $(stack path --local-hpc-root --resolver $STACK_RESOLVER)/all/  --resolver $STACK_RESOLVER
-  - codecov-haskell test-all --tix-dir $(stack path --local-hpc-root --resolver $STACK_RESOLVER)/ --mix-dir $(stack path --dist-dir --resolver $STACK_RESOLVER)/hpc/ --exclude-dir=test --display-report --print-response --token=$CODECOV_TOKEN
+  - export PACKAGE_NAME=codecov-haskell
+	- export MIX_DIR="$(stack path --dist-dir)/hpc/"
+	- export TIX_DIR="$(stack path --local-hpc-root)/$PACKAGE_NAME/"
+  - \
+    codecov-haskell test-all --exclude-dir=test \
+			--display-report \
+			--print-response \
+			--combined=false \
+			--exclude-dir test \
+			--mix-dir $MIX_DIR \
+			--tix-dir $TIX_DIR \
+			--token=$CODECOV_TOKEN
 
 cache:
   directories:
