@@ -27,7 +27,7 @@ script:
 
 after_script:
   - export PACKAGE_NAME=codecov-haskell
-	- export MIX_DIR="$(stack path --dist-dir)/hpc/"
+  - export MIX_DIR="$(stack path --dist-dir)/hpc/"
 	- export TIX_DIR="$(stack path --local-hpc-root)/$PACKAGE_NAME/"
   - codecov-haskell test-all --exclude-dir=test --display-report --print-response --combined=false --exclude-dir test --mix-dir $MIX_DIR --tix-dir $TIX_DIR --token=$CODECOV_TOKEN
 
