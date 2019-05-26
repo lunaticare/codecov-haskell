@@ -49,6 +49,7 @@ library
     Trace.Hpc.Codecov.Util
   other-modules:
     CodecovHaskellCmdLine,
+    Paths_codecov_haskell,
     Trace.Hpc.Codecov.Config,
     Trace.Hpc.Codecov.Curl,
     Trace.Hpc.Codecov.Paths
@@ -109,3 +110,4 @@ test-suite test-all
     codecov-haskell,
     HUnit
   ghc-options:    -Wall
+    TestCodecovHaskellLix
