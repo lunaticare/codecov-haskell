@@ -3,15 +3,15 @@ jobs:
   include:
   - env:
     # GHC 8.2.2
-    - NIX_CHANNEL=https://nixos.org/channels/nixpkgs-19.09
+    - NIX_CHANNEL=https://nixos.org/channels/nixos-19.09
     - STACK_RESOLVER=lts-11.22
   - env:
     # GHC 8.4.4
-    - NIX_CHANNEL=https://nixos.org/channels/nixpkgs-19.09
+    - NIX_CHANNEL=https://nixos.org/channels/nixos-19.09
     - STACK_RESOLVER=lts-12.26
   - env:
     # GHC 8.6.5
-    - NIX_CHANNEL=https://nixos.org/channels/nixpkgs-19.09
+    - NIX_CHANNEL=https://nixos.org/channels/nixos-19.09
     - STACK_RESOLVER=lts-14.12
 
 before_install:
