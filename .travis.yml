@@ -13,6 +13,10 @@ jobs:
     # GHC 8.6.5
     - NIX_CHANNEL=https://nixos.org/channels/nixos-19.09
     - STACK_RESOLVER=lts-14.12
+  - env:
+    # GHC 8.8.1
+    - NIX_CHANNEL=https://nixos.org/channels/nixos-19.09
+    - STACK_RESOLVER=nightly-2019-10-27
 
 before_install:
   # configure Nix https://nixos.wiki/wiki/Nix_on_Travis
